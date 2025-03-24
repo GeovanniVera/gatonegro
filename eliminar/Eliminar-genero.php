@@ -4,7 +4,7 @@ include '../rutas/header__servicios.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $sql = "DELETE FROM generos WHERE Id = $id";
+    $sql = "DELETE FROM Generos WHERE Id = $id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Género eliminado correctamente.";

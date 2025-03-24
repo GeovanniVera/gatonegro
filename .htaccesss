@@ -1,0 +1,15 @@
+# Activar la reescritura de URLs
+RewriteEngine On
+
+# Redirigir de HTTP a HTTPS (si tienes SSL)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevenir la visualización de directorios
+Options -Indexes
+
+# Prevenir el acceso a archivos .htaccess
+<Files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+</Files>

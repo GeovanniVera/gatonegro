@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Eliminar la consola de la base de datos
-    $sql = "DELETE FROM consolas WHERE id = $id";
+    $sql = "DELETE FROM Consolas WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Consola eliminada correctamente.";

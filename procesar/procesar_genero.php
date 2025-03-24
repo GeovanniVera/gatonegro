@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($id) {
-            $sql = "UPDATE generos SET Nombre = '$nombreGenero', Descripcion = '$descripcionGenero' WHERE Id = $id";
+            $sql = "UPDATE Generos SET Nombre = '$nombreGenero', Descripcion = '$descripcionGenero' WHERE Id = $id";
         } else {
-            $sql = "INSERT INTO generos (Nombre, Descripcion) VALUES ('$nombreGenero', '$descripcionGenero')";
+            $sql = "INSERT INTO Generos (Nombre, Descripcion) VALUES ('$nombreGenero', '$descripcionGenero')";
         }
 
         if ($conn->query($sql) === TRUE) {

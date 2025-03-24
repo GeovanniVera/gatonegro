@@ -4,7 +4,7 @@
     <div class="pagina-sesion">
         <div class="contenedor__sesion contenedor">
             <div class="sesion__right">
-                <form method="post" action="Sesion.php">
+                <form method="post" action="sesion.php">
                     <h3 class="sesion__formulario__titulo"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h3>
                     <input type="text" name="usuario" placeholder="Correo Electrónico" class="sesion__formulario__input" required>
                     <input type="password" name="contraseña" placeholder="Contraseña" class="sesion__formulario__input" required>

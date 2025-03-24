@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM generos";
+                $sql = "SELECT * FROM Generos";
                 $result = $conn->query($sql);
 
                 if ($result && $result->num_rows > 0) {

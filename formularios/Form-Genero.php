@@ -7,7 +7,7 @@ $descripcionGenero = '';
 $errores = []; // Array para almacenar errores
 
 if ($id) {
-    $sql = "SELECT * FROM generos WHERE Id = $id";
+    $sql = "SELECT * FROM Generos WHERE Id = $id";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows > 0) {

@@ -32,20 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validaciones para la fecha de creación
-    if (empty($fechaCreacionConsola)) {
-        $errores[] = "La fecha de creación es obligatoria.";
-    } else {
-        // Verificar formato de fecha válido (YYYY-MM-DD HH:MM:SS)
-        if (!preg_match("/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/", $fechaCreacionConsola)) {
-            $errores[] = "El formato de la fecha de creación no es válido.";
-        } else {
-            // Verificar fecha futura
-            $fechaActual = date("Y-m-d H:i:s");
-            if ($fechaCreacionConsola > $fechaActual) {
-                $errores[] = "La fecha de creación no puede ser una fecha futura.";
-            }
-        }
-    }
 
     if (!empty($errores)) {
         // Redirigir de vuelta al formulario con los errores
@@ -57,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($id) {
-            $sql = "UPDATE consolas SET Nombre = '$nombreConsola', Descripcion = '$descripcionConsola', Modelo = '$modeloConsola', Fecha_Creacion = '$fechaCreacionConsola' WHERE Id = $id";
+            $sql = "UPDATE Consolas SET Nombre = '$nombreConsola', Descripcion = '$descripcionConsola', Modelo = '$modeloConsola', Fecha_Creacion = '$fechaCreacionConsola' WHERE Id = $id";
         } else {
-            $sql = "INSERT INTO consolas (Nombre, Descripcion, Modelo, Fecha_Creacion) VALUES ('$nombreConsola', '$descripcionConsola', '$modeloConsola', '$fechaCreacionConsola')";
+            $sql = "INSERT INTO Consolas (Nombre, Descripcion, Modelo, Fecha_Creacion) VALUES ('$nombreConsola', '$descripcionConsola', '$modeloConsola', '$fechaCreacionConsola')";
         }
 
         if ($conn->query($sql) === TRUE) {

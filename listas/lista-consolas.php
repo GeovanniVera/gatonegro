@@ -18,7 +18,7 @@
             <tbody>
                 <?php
                 // Consulta a la base de datos
-                $sql = "SELECT * FROM consolas";
+                $sql = "SELECT * FROM Consolas";
                 $result = $conn->query($sql);
 
                 if ($result) { // Verificar si la consulta se ejecutó correctamente
